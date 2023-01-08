@@ -7,6 +7,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 
 /**
  * JavaFX App
@@ -33,6 +38,23 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
-    }
+
+        String url="jdbc:mysql://localhost:3306/hamza";
+        String user="root";
+        String password="madd";
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection connection=DriverManager.getConnection(url,user,password);
+            System.out.println("Connection is successful to the database" +url);
+
+            String query="Insert into mizo(ID, NAME) values(13,'kddkhamzach')";
+            Statement statement=connection.createStatement();
+            statement.executeUpdate(query);
+
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        }
 
 }

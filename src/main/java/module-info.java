@@ -4,4 +4,5 @@ module com.projetpfa {
 
     opens com.projetpfa to javafx.fxml;
     exports com.projetpfa;
+    requires java.sql;
 }
