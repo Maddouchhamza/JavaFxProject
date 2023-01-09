@@ -12,6 +12,55 @@
     <dependencies>
 
         <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx-materialdesignfont</artifactId>
+            <version>2.0.26-9.1.2</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>material-design-iconic-font</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>material-design-icons__font</artifactId>
+            <version>0.2.7</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.jfoenix</groupId>
+            <artifactId>jfoenix</artifactId>
+            <version>9.0.10</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.rationalityfrontline.workaround</groupId>
+            <artifactId>jfoenix</artifactId>
+            <version>19.0.1</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>fontawesome</artifactId>
+            <version>4.7.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.5.13.3</version>
+        </dependency>
+
+
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.31</version>

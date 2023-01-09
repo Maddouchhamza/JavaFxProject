@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: #C1C1C2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="500.0" prefWidth="224.0" style="-fx-background-color: #0F91CC;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="676.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton alignment="BASELINE_LEFT" layoutX="20.0" layoutY="280.0" text="Accueil" textFill="#3c3c3c" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="280.0">
+               <graphic>
+                  <MaterialDesignIconView fill="#404040" glyphName="HOME" size="18.0" text="" wrappingWidth="19.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </MaterialDesignIconView>
+               </graphic>
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" layoutX="20.0" layoutY="340.0" text="Professeurs" textFill="#3c3c3c" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="340.0">
+               <graphic>
+                  <MaterialDesignIconView fill="#404040" glyphName="ACCOUNT" size="18.0" wrappingWidth="19.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </MaterialDesignIconView>
+               </graphic>
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" layoutX="20.0" layoutY="400.0" prefHeight="26.0" prefWidth="184.0" text="Matières" textFill="#3c3c3c" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="400.0">
+               <graphic>
+                  <MaterialDesignIconView fill="#404040" glyphName="FILE_DOCUMENT" size="18.0" wrappingWidth="19.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </MaterialDesignIconView>
+               </graphic>
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" layoutX="20.0" layoutY="458.0" prefHeight="25.0" prefWidth="198.0" text="Etudiants" textFill="#3c3c3c" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="458.0">
+               <graphic>
+                  <MaterialDesignIconView fill="#404040" glyphName="ACCOUNT_MULTIPLE" size="18.0" wrappingWidth="19.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </MaterialDesignIconView>
+               </graphic>
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font>
+            </JFXButton>
+            <Pane layoutY="7.0" prefHeight="264.0" prefWidth="224.0" style="-fx-background-color: #7F7F7F;" AnchorPane.bottomAnchor="236.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Separator layoutY="199.0" prefHeight="3.0" prefWidth="224.0" />
+                  <Label alignment="CENTER" layoutX="18.0" layoutY="218.0" prefHeight="26.0" prefWidth="184.0" text="Nom du département" textFill="WHITE">
+                     <font>
+                        <Font name="Lato Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="HOME_MODERN" size="19.0" wrappingWidth="26.0" />
+                     </graphic>
+                  </Label>
+                  <VBox prefHeight="200.0" prefWidth="223.0" styleClass="logo-enim" stylesheets="@../../../java/com/projetpfa/application.css" />
+               </children></Pane>
+            <Separator layoutY="443.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Separator layoutX="1.0" layoutY="384.0" prefWidth="200.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" />
+            <Separator layoutY="324.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Separator layoutY="263.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="224.0" layoutY="99.0" prefHeight="500.0" prefWidth="676.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="224.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>
