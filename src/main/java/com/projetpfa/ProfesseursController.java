@@ -2,12 +2,13 @@ package com.projetpfa;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import com.jfoenix.controls.JFXButton;
 
-public class HomeController extends Application{
+public class ProfesseursController extends Application{
 
     @Override
     public void start(Stage arg0) throws Exception {
+        // TODO Auto-generated method stub
+        
     }
     
 }

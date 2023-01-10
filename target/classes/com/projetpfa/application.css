@@ -1,3 +1,83 @@
-.logo-enim {
-  -fx-background-image: url(/src/img/Logo.png);
+.btn {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);
+}
+
+.btn-update {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);
+  -fx-background-color: #0f91cc;
+}
+.btn-update:hover {
+  -fx-background-color: #005f8b;
+}
+
+.btn-delete {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);
+  -fx-background-color: #e11414;
+}
+.btn-delete:hover {
+  -fx-background-color: #aa0909;
+}
+
+.btn-ajouter {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);
+  -fx-background-color: #009d34;
+}
+
+.btn-ajouter:hover {
+  -fx-background-color: #027729;
+}
+
+.btn-rechercher {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);
+  -fx-background-color: #6a6a6a;
+}
+
+.btn-rechercher:hover {
+  -fx-background-color: #303030;
+}
+
+.btn-seconnecter {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);
+  -fx-background-color: #ffffff;
+}
+
+.btn-seconnecter:hover {
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+.parent {
+  -fx-background-color: transparent;
+}
+.pane {
+  -fx-background-color: #0f91cc;
+}
+.trans-btn-white-border {
+  -fx-background-color: transparent;
+  -fx-background-radius: 5px;
+  -fx-border-color: #cccccc;
+  -fx-border-radius: 5px;
+  -fx-border-width: 1px;
+  -fx-text-fill: whitesmoke;
+}
+.white-pane {
+  -fx-background-size: 281 386;
+  -fx-background-position: center center;
+  -fx-background-color: #ffffff;
+}
+.tf_box {
+  -fx-background-color: transparent;
+  -fx-border-color: #dedee4;
+  -fx-border-width: 0px 0px 1px 0px;
+}
+.tf {
+  -fx-background-color: transparent;
+  -fx-prompt-text-fill: #2c2c2c;
+}
+.pink-btn {
+  -fx-background-color: #c5304d;
+  -fx-text-fill: #ffffff;
+}
+.pink-btn:hover {
+  -fx-background-color: #7c192d;
 }

@@ -4,7 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -23,8 +25,10 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("Home"), 900, 500);
+        scene = new Scene(loadFXML("Main"), 705, 463);
         stage.setScene(scene);
+        scene.setFill(Color.TRANSPARENT); //2 ligne pour éliminer les bordures de la fenetre
+        stage.initStyle(StageStyle.TRANSPARENT);
         String css = this.getClass().getResource("application.css").toExternalForm(); 
         scene.getStylesheets().add(css);
         stage.show();
