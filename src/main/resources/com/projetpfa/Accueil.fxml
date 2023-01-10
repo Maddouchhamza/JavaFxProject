@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,21 +12,21 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="676.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <JFXTextArea layoutX="267.0" layoutY="64.0" prefHeight="37.0" prefWidth="203.0" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="283.0" />
-      <TextField layoutX="267.0" layoutY="64.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="283.0" />
+      <TextField fx:id="txt_id_dep" layoutX="267.0" layoutY="64.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="283.0" />
       <Label layoutX="290.0" layoutY="47.0" prefHeight="16.0" prefWidth="253.0" text="ID Département" textFill="#3c3c3c" AnchorPane.leftAnchor="290.0" AnchorPane.rightAnchor="283.0">
          <font>
             <Font name="Lato Black" size="13.0" />
          </font>
       </Label>
       <JFXTextArea layoutX="95.0" layoutY="183.0" prefHeight="37.0" prefWidth="203.0" />
-      <TextField layoutX="95.0" layoutY="183.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
+      <TextField fx:id="txt_chef_dep" layoutX="95.0" layoutY="183.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
       <Label layoutX="120.0" layoutY="167.0" text="Chef de département" textFill="#3c3c3c">
          <font>
             <Font name="Lato Black" size="13.0" />
          </font>
       </Label>
       <JFXTextArea layoutX="95.0" layoutY="299.0" prefHeight="37.0" prefWidth="203.0" />
-      <TextField layoutX="95.0" layoutY="299.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
+      <TextField fx:id="txt_creation_date" layoutX="95.0" layoutY="299.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
       <Label layoutX="118.0" layoutY="282.0" text="Année de création" textFill="#3c3c3c">
          <font>
             <Font name="Lato Black" size="13.0" />
@@ -36,14 +36,14 @@
       <MaterialDesignIconView fill="#3c3c3c" glyphName="KEY" layoutX="267.0" layoutY="61.0" size="17.0" wrappingWidth="17.0" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="392.0" />
       <MaterialDesignIconView fill="#3c3c3c" glyphName="SCHOOL" layoutX="94.0" layoutY="182.0" size="17.0" wrappingWidth="17.0" />
       <JFXTextArea layoutX="373.0" layoutY="183.0" prefHeight="37.0" prefWidth="203.0" />
-      <TextField layoutX="373.0" layoutY="183.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
+      <TextField fx:id="txt_user" layoutX="373.0" layoutY="183.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
       <Label layoutX="393.0" layoutY="166.0" text="Nom d'utilisateur" textFill="#3c3c3c">
          <font>
             <Font name="Lato Black" size="13.0" />
          </font>
       </Label>
       <JFXTextArea layoutX="376.0" layoutY="299.0" prefHeight="37.0" prefWidth="203.0" />
-      <TextField layoutX="375.0" layoutY="299.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
+      <TextField fx:id="txt_password" layoutX="375.0" layoutY="299.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
       <Label layoutX="394.0" layoutY="282.0" text="Mot de passe" textFill="#3c3c3c">
          <font>
             <Font name="Lato Black" size="13.0" />
@@ -51,21 +51,21 @@
       </Label>
       <MaterialDesignIconView fill="#3c3c3c" glyphName="ACCOUNT" layoutX="371.0" layoutY="180.0" size="17.0" wrappingWidth="17.0" />
       <MaterialDesignIconView fill="#3c3c3c" glyphName="LOCK" layoutX="372.0" layoutY="296.0" size="17.0" wrappingWidth="17.0" />
-      <Button layoutX="145.0" layoutY="406.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 15;" styleClass="btn-update" stylesheets="@../../../java/com/projetpfa/application.css" text="Update Data" textFill="WHITE" AnchorPane.leftAnchor="145.0">
+      <JFXButton fx:id="btn_update" layoutX="145.0" layoutY="406.0" onMouseClicked="#Update" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 15;" styleClass="btn-update" stylesheets="@../../../java/com/projetpfa/application.css" text="Update Data" textFill="WHITE" AnchorPane.leftAnchor="145.0">
+         <padding>
+            <Insets bottom="6.0" left="15.0" right="15.0" top="6.0" />
+         </padding>
+         <font>
+            <Font name="Lato Black" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_delete" layoutX="376.0" layoutY="406.0" onMouseClicked="#Delete" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 15;" styleClass="btn-delete" stylesheets="@../../../java/com/projetpfa/application.css" text="Delete Account" textFill="WHITE" AnchorPane.rightAnchor="145.0">
          <font>
             <Font name="Lato Black" size="16.0" />
          </font>
          <padding>
             <Insets bottom="6.0" left="15.0" right="15.0" top="6.0" />
          </padding>
-      </Button>
-      <Button layoutX="376.0" layoutY="406.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 15;" styleClass="btn-delete" stylesheets="@../../../java/com/projetpfa/application.css" text="Delete Account" textFill="WHITE" AnchorPane.rightAnchor="145.0">
-         <font>
-            <Font name="Lato Black" size="16.0" />
-         </font>
-         <padding>
-            <Insets bottom="6.0" left="15.0" right="15.0" top="6.0" />
-         </padding>
-      </Button>
+      </JFXButton>
    </children>
 </AnchorPane>

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="323.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="vbox" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="323.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetpfa.SignInController">
    <children>
       <Pane prefHeight="417.0" prefWidth="323.0">
          <children>
@@ -19,7 +19,7 @@
                   <Font name="Lato Black" size="17.0" />
                </font>
             </Label>
-            <JFXButton layoutX="113.0" layoutY="325.0" prefHeight="33.0" prefWidth="101.0" style="-fx-background-radius: 15;" stylesheets="@../../../java/com/projetpfa/application.css" text="Se connecter">
+            <JFXButton fx:id="btn_seconnecter" layoutX="113.0" layoutY="325.0" onAction="#openHome" onMouseClicked="#openHome" prefHeight="33.0" prefWidth="101.0" style="-fx-background-radius: 15;" stylesheets="@../../../java/com/projetpfa/application.css" text="Se connecter">
                <font>
                   <Font name="Lato Black" size="13.0" />
                </font>
@@ -29,7 +29,7 @@
                </styleClass>
             </JFXButton>
             <JFXTextArea layoutX="61.0" layoutY="238.0" prefHeight="37.0" prefWidth="203.0" />
-            <TextField layoutX="61.0" layoutY="248.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
+            <TextField fx:id="txt_password" layoutX="61.0" layoutY="248.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
             <Label layoutX="60.0" layoutY="230.0" text="Mot de passe" textFill="#3c3c3c">
                <font>
                   <Font name="Lato Black" size="13.0" />
@@ -39,7 +39,7 @@
                </graphic>
             </Label>
             <JFXTextArea layoutX="60.0" layoutY="153.0" prefHeight="37.0" prefWidth="203.0" />
-            <TextField layoutX="60.0" layoutY="163.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
+            <TextField fx:id="txt_user" layoutX="60.0" layoutY="163.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
             <Label layoutX="57.0" layoutY="144.0" text="Utilisateur" textFill="#3c3c3c">
                <font>
                   <Font name="Lato Black" size="13.0" />

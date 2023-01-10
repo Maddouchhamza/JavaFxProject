@@ -15,7 +15,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
 /**
  * JavaFX App
  */
@@ -25,11 +24,11 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("Main"), 705, 463);
+        scene = new Scene(loadFXML("Main"));
         stage.setScene(scene);
-        scene.setFill(Color.TRANSPARENT); //2 ligne pour éliminer les bordures de la fenetre
+        scene.setFill(Color.TRANSPARENT); // 2 ligne pour éliminer les bordures de la fenetre
         stage.initStyle(StageStyle.TRANSPARENT);
-        String css = this.getClass().getResource("application.css").toExternalForm(); 
+        String css = this.getClass().getResource("application.css").toExternalForm();
         scene.getStylesheets().add(css);
         stage.show();
     }
@@ -50,29 +49,27 @@ public class App extends Application {
         // String user="root";
         // String password="madd";
         // try {
-        //     Class.forName("com.mysql.jdbc.Driver");
-        //     Connection connection=DriverManager.getConnection(url,user,password);
-        //     System.out.println("Connection is successful to the database" +url);
-            
-        //     Statement statement=connection.createStatement();
-        //     String query = "INSERT INTO matières VALUES (2,'Arabe','Langues',3.5)"; 
-        //     statement.executeUpdate(query);
-        //     System.out.println("Inserted records into the table...");   	  
+        // Class.forName("com.mysql.jdbc.Driver");
+        // Connection connection=DriverManager.getConnection(url,user,password);
+        // System.out.println("Connection is successful to the database" +url);
 
+        // Statement statement=connection.createStatement();
+        // String query = "INSERT INTO matières VALUES (2,'Arabe','Langues',3.5)";
+        // statement.executeUpdate(query);
+        // System.out.println("Inserted records into the table...");
 
-            // String query="SELECT * FROM mizo";
-            // ResultSet rs = statement.executeQuery(query);
-            // while(rs.next()){
-            //     //Display values
-            //     System.out.print("ID:" + rs.getInt("ID"));
-            //     System.out.print("\nName:" + rs.getString("NAME"));
-            //     System.out.print("\n---------------------------------------------------\n");
-            //  }
-
+        // String query="SELECT * FROM mizo";
+        // ResultSet rs = statement.executeQuery(query);
+        // while(rs.next()){
+        // //Display values
+        // System.out.print("ID:" + rs.getInt("ID"));
+        // System.out.print("\nName:" + rs.getString("NAME"));
+        // System.out.print("\n---------------------------------------------------\n");
+        // }
 
         // } catch (ClassNotFoundException | SQLException e) {
-        //     e.printStackTrace();
+        // e.printStackTrace();
         // }
-        }
+    }
 
 }
