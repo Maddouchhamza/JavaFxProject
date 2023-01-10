@@ -10,15 +10,19 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextArea;
 
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class SignInController implements Initializable {
 
@@ -30,10 +34,10 @@ public class SignInController implements Initializable {
     private JFXButton btn_seconnecter;
 
     @FXML
-    private JFXTextArea txt_password;
+    private TextField txt_password;
 
     @FXML
-    private JFXTextArea txt_user;
+    private TextField txt_user;
 
     @FXML
     private VBox vbox;
@@ -43,18 +47,21 @@ public class SignInController implements Initializable {
     void openHome() {
         String nom = txt_user.getText();
         String password = txt_password.getText();
-        String sql = "select user, password from admin";
+        String sql = "select user, password from departements";
 
         try {
             st = cnx.prepareStatement(sql);
             result = st.executeQuery();
             if (result.next()) {
-                if (nom.equals(result.getString("user")) && password.equals(result.getString("passwrod"))) {
+                if (nom.equals(result.getString("user")) && password.equals(result.getString("password"))) {
                     vbox.getScene().getWindow().hide();
                     Stage home = new Stage();
                     try {
-                        fxml = FXMLLoader.load(getClass().getResource("/src/main/resources/com/projetpfa/SignIn.fxml"));
+                        fxml = FXMLLoader.load(getClass().getResource("Home.fxml"));
                         Scene scene = new Scene(fxml);
+                        home.setScene(scene); // missed one
+                        scene.setFill(Color.TRANSPARENT); // 2 ligne pour éliminer les bordures de la fenetre
+                        home.initStyle(StageStyle.TRANSPARENT);
                         home.show();
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -68,7 +75,7 @@ public class SignInController implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        // cnx = ConnexionMysql.connexionDB();
+        cnx = ConnexionMysql.connexionDB();
 
     }
 

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="323.0" styleClass="white-pane" stylesheets="@../../../java/com/projetpfa/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="vbox" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="323.0" styleClass="white-pane" stylesheets="@../../../java/com/projetpfa/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetpfa.SignUpController">
    <children>
       <Pane prefHeight="428.0" prefWidth="323.0">
          <children>
@@ -24,18 +24,18 @@
                </styleClass>
             </JFXButton>
             <JFXTextArea layoutX="60.0" layoutY="85.0" prefHeight="37.0" prefWidth="203.0" />
-            <TextField layoutX="60.0" layoutY="85.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
-            <Label layoutX="60.0" layoutY="85.0" text="Nom d'utilisateur" textFill="#3c3c3c">
+            <TextField layoutX="60.0" layoutY="96.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
+            <Label layoutX="60.0" layoutY="81.0" text="Nom d'utilisateur" textFill="#3c3c3c">
                <font>
                   <Font name="Lato Black" size="13.0" />
                </font>
                <graphic>
-                  <MaterialDesignIconView fill="#3c3c3c" glyphName="PREGNANT WOMAN" size="18" text="" wrappingWidth="23.0" />
+                  <MaterialDesignIconView fill="#3c3c3c" glyphName="ACCOUNT" size="18" text="" wrappingWidth="23.0" />
                </graphic>
             </Label>
             <JFXTextArea layoutX="61.0" layoutY="157.0" prefHeight="37.0" prefWidth="203.0" />
-            <TextField layoutX="61.0" layoutY="157.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
-            <Label layoutX="61.0" layoutY="157.0" text="Mot de passe" textFill="#3c3c3c">
+            <TextField layoutX="61.0" layoutY="168.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
+            <Label layoutX="61.0" layoutY="153.0" text="Mot de passe" textFill="#3c3c3c">
                <font>
                   <Font name="Lato Black" size="13.0" />
                </font>
@@ -44,23 +44,23 @@
                </graphic>
             </Label>
             <JFXTextArea layoutX="61.0" layoutY="232.0" prefHeight="37.0" prefWidth="203.0" />
-            <TextField layoutX="61.0" layoutY="232.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
-            <Label layoutX="61.0" layoutY="232.0" text="Chef du département" textFill="#3c3c3c">
+            <TextField layoutX="61.0" layoutY="243.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
+            <Label layoutX="61.0" layoutY="229.0" text="Chef du département" textFill="#3c3c3c">
                <font>
                   <Font name="Lato Black" size="13.0" />
                </font>
                <graphic>
-                  <MaterialDesignIconView fill="#3c3c3c" glyphName="PREGNANT WOMAN" size="18" text="" wrappingWidth="23.0" />
+                  <MaterialDesignIconView fill="#3c3c3c" glyphName="ACCOUNT" size="18" text="" wrappingWidth="23.0" />
                </graphic>
             </Label>
             <JFXTextArea layoutX="62.0" layoutY="304.0" prefHeight="37.0" prefWidth="203.0" />
-            <TextField layoutX="62.0" layoutY="304.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
-            <Label layoutX="62.0" layoutY="304.0" text="Année de création" textFill="#3c3c3c">
+            <TextField layoutX="62.0" layoutY="315.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
+            <Label layoutX="62.0" layoutY="300.0" text="Année de création" textFill="#3c3c3c">
                <font>
                   <Font name="Lato Black" size="13.0" />
                </font>
                <graphic>
-                  <MaterialDesignIconView fill="#3c3c3c" glyphName="CALENDAR" selectionStart="0" size="18" tabSize="2" wrappingWidth="23.0" />
+                  <MaterialDesignIconView fill="#3c3c3c" glyphName="CALENDAR"  size="18"  text="" wrappingWidth="23.0" />
                </graphic>
             </Label>
             <Label alignment="CENTER" layoutX="111.0" layoutY="27.0" prefHeight="21.0" prefWidth="101.0" text="Inscription" textAlignment="CENTER" textFill="#c5304d" wrapText="true">

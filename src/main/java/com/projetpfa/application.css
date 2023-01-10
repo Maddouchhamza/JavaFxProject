@@ -77,9 +77,9 @@
   -fx-prompt-text-fill: #2c2c2c;
 }
 .pink-btn {
-  -fx-background-color: #c5304d;
+  -fx-background-color: #b81e3d;
   -fx-text-fill: #ffffff;
 }
 .pink-btn:hover {
-  -fx-background-color: #7c192d;
+  -fx-background-color: #711427;
 }

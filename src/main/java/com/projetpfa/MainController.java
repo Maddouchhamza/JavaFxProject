@@ -1,20 +1,6 @@
-// package com.projetpfa;
-
-// import javafx.application.Application;
-// import javafx.stage.Stage;
-
-// public class MainController extends Application {
-
-//     @Override
-//     public void start(Stage arg0) throws Exception {
-//         // TODO Auto-generated method stub
-
-//     }
-
-// }
-
 package com.projetpfa;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -49,7 +35,7 @@ public class MainController implements Initializable {
         t.play();
         t.setOnFinished((e -> {
             try {
-                fxml = FXMLLoader.load(getClass().getResource("src/main/resources/com/projetpfa/SignIn.fxml"));
+                fxml = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
                 vbox.getChildren().removeAll();
                 vbox.getChildren().setAll(fxml);
             } catch (Exception e1) {
@@ -66,7 +52,7 @@ public class MainController implements Initializable {
         t.play();
         t.setOnFinished((e -> {
             try {
-                fxml = FXMLLoader.load(getClass().getResource("/src/main/resources/com/projetpfa/SignUp.fxml"));
+                fxml = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
                 vbox.getChildren().removeAll();
                 vbox.getChildren().setAll(fxml);
             } catch (Exception e1) {
@@ -80,7 +66,6 @@ public class MainController implements Initializable {
         TranslateTransition t = new TranslateTransition(Duration.seconds(1), vbox);
         t.setToX(vbox.getLayoutX() * -0.5);
         t.play();
-
     }
 
 }

@@ -8,8 +8,8 @@ public class ConnexionMysql {
 
     public static Connection connexionDB() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/3306/", "root", "");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/javafxproject", "root", "madd");
             return cn;
         } catch (Exception e) {
             e.printStackTrace();

@@ -45,7 +45,7 @@
                   <Font name="Lato Black" size="13.0" />
                </font>
                <graphic>
-                  <MaterialDesignIconView fill="#3c3c3c" glyphName="PREGNANT WOMAN" size="18" text="" wrappingWidth="23.0" />
+                  <MaterialDesignIconView fill="#3c3c3c" glyphName="ACCOUNT" size="18" text="" wrappingWidth="23.0" />
                </graphic>
             </Label>
          </children>
