@@ -30,6 +30,7 @@ public class SignInController implements Initializable {
     Connection cnx;
     public PreparedStatement st;
     public ResultSet result;
+    public static String CurrentUser;
 
     @FXML
     private JFXButton btn_seconnecter;
@@ -49,13 +50,19 @@ public class SignInController implements Initializable {
     void openHome() {
         String nom = txt_user.getText();
         String password = txt_password.getText();
-        String sql = "select user, password from departements";
+        String sql = "select * from departements";
 
         try {
             st = cnx.prepareStatement(sql);
             result = st.executeQuery();
             while (result.next()) {
                 if (nom.equals(result.getString("user")) && password.equals(result.getString("password"))) {
+                    try {
+                        CurrentUser = result.getString("user");
+                    } catch (SQLException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
                     vbox.getScene().getWindow().hide();
                     Stage home = new Stage();
                     try {

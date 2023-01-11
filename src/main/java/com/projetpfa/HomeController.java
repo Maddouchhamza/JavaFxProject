@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -15,12 +16,17 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 
+import static com.projetpfa.SignInController.CurrentUser;
+
 public class HomeController implements Initializable {
 
     private Parent fxml;
 
     @FXML
     private AnchorPane root;
+
+    @FXML
+    private Label CurrentUserlab;
 
     @FXML
     void accueil(MouseEvent event) {
@@ -70,7 +76,7 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-
+        CurrentUserlab.setText(CurrentUser);
     }
 
 }
