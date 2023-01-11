@@ -4,12 +4,13 @@
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="676.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="676.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetpfa.AccueilController">
    <children>
       <JFXTextArea layoutX="267.0" layoutY="64.0" prefHeight="37.0" prefWidth="203.0" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="283.0" />
       <TextField fx:id="txt_id_dep" layoutX="267.0" layoutY="64.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="283.0" />
@@ -51,7 +52,7 @@
       </Label>
       <MaterialDesignIconView fill="#3c3c3c" glyphName="ACCOUNT" layoutX="371.0" layoutY="180.0" size="17.0" wrappingWidth="17.0" />
       <MaterialDesignIconView fill="#3c3c3c" glyphName="LOCK" layoutX="372.0" layoutY="296.0" size="17.0" wrappingWidth="17.0" />
-      <JFXButton fx:id="btn_update" layoutX="145.0" layoutY="406.0" onMouseClicked="#Update" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 15;" styleClass="btn-update" stylesheets="@../../../java/com/projetpfa/application.css" text="Update Data" textFill="WHITE" AnchorPane.leftAnchor="145.0">
+      <JFXButton fx:id="btn_update" layoutX="152.0" layoutY="393.0" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 15; -fx-background-color: #0f91cc; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Update Data" textFill="WHITE" AnchorPane.leftAnchor="152.0">
          <padding>
             <Insets bottom="6.0" left="15.0" right="15.0" top="6.0" />
          </padding>
@@ -59,13 +60,16 @@
             <Font name="Lato Black" size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btn_delete" layoutX="376.0" layoutY="406.0" onMouseClicked="#Delete" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 15;" styleClass="btn-delete" stylesheets="@../../../java/com/projetpfa/application.css" text="Delete Account" textFill="WHITE" AnchorPane.rightAnchor="145.0">
+      <JFXButton fx:id="btn_delete" layoutX="370.0" layoutY="393.0" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 15; -fx-background-color: #e11414; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Delete Account" textFill="WHITE" AnchorPane.rightAnchor="152.0">
          <font>
             <Font name="Lato Black" size="16.0" />
          </font>
          <padding>
             <Insets bottom="6.0" left="15.0" right="15.0" top="6.0" />
          </padding>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
    </children>
 </AnchorPane>

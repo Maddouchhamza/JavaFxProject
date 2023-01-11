@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -42,6 +43,7 @@ public class SignInController implements Initializable {
     @FXML
     private VBox vbox;
     private Parent fxml;
+    private AnchorPane root;
 
     @FXML
     void openHome() {
@@ -52,7 +54,7 @@ public class SignInController implements Initializable {
         try {
             st = cnx.prepareStatement(sql);
             result = st.executeQuery();
-            if (result.next()) {
+            while (result.next()) {
                 if (nom.equals(result.getString("user")) && password.equals(result.getString("password"))) {
                     vbox.getScene().getWindow().hide();
                     Stage home = new Stage();
