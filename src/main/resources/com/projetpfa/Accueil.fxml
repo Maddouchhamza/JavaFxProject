@@ -52,7 +52,7 @@
       </Label>
       <MaterialDesignIconView fill="#3c3c3c" glyphName="ACCOUNT" layoutX="371.0" layoutY="180.0" size="17.0" wrappingWidth="17.0" />
       <MaterialDesignIconView fill="#3c3c3c" glyphName="LOCK" layoutX="372.0" layoutY="296.0" size="17.0" wrappingWidth="17.0" />
-      <JFXButton fx:id="btn_update" layoutX="152.0" layoutY="393.0" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 15; -fx-background-color: #0f91cc; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Update Data" textFill="WHITE" AnchorPane.leftAnchor="152.0">
+      <JFXButton fx:id="btn_update" layoutX="152.0" layoutY="393.0" onAction="#Update" onMouseClicked="#Update" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 15; -fx-background-color: #0f91cc; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Update Data" textFill="WHITE" AnchorPane.leftAnchor="152.0">
          <padding>
             <Insets bottom="6.0" left="15.0" right="15.0" top="6.0" />
          </padding>
@@ -60,7 +60,7 @@
             <Font name="Lato Black" size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btn_delete" layoutX="370.0" layoutY="393.0" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 15; -fx-background-color: #e11414; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Delete Account" textFill="WHITE" AnchorPane.rightAnchor="152.0">
+      <JFXButton fx:id="btn_delete" layoutX="368.0" layoutY="393.0" onAction="#Delete" onMouseClicked="#Delete" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 15; -fx-background-color: #e11414; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Delete Account" textFill="WHITE" AnchorPane.rightAnchor="153.0">
          <font>
             <Font name="Lato Black" size="16.0" />
          </font>

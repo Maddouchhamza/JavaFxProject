@@ -29,7 +29,7 @@ public class HomeController implements Initializable {
     private Label CurrentUserlab;
 
     @FXML
-    void accueil(MouseEvent event) {
+    void accueil() {
         try {
             fxml = FXMLLoader.load(getClass().getResource("Accueil.fxml"));
             root.getChildren().removeAll();
@@ -40,7 +40,7 @@ public class HomeController implements Initializable {
     }
 
     @FXML
-    void etudiants(MouseEvent event) {
+    void etudiants() {
         try {
             fxml = FXMLLoader.load(getClass().getResource("Etudiants.fxml"));
             root.getChildren().removeAll();
@@ -51,7 +51,7 @@ public class HomeController implements Initializable {
     }
 
     @FXML
-    void matieres(MouseEvent event) {
+    void matieres() {
         try {
             fxml = FXMLLoader.load(getClass().getResource("Matières.fxml"));
             root.getChildren().removeAll();
@@ -63,7 +63,7 @@ public class HomeController implements Initializable {
     }
 
     @FXML
-    void professeurs(MouseEvent event) {
+    void professeurs() {
         try {
             fxml = FXMLLoader.load(getClass().getResource("Professeurs.fxml"));
             root.getChildren().removeAll();
@@ -77,6 +77,7 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         CurrentUserlab.setText(CurrentUser);
+
     }
 
 }

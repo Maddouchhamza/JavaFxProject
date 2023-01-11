@@ -16,20 +16,20 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="676.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXComboBox accessibleRole="DATE_PICKER" layoutX="269.0" layoutY="136.0" prefHeight="25.0" prefWidth="129.0" />
-      <TableView layoutX="61.0" layoutY="306.0" prefHeight="185.0" prefWidth="554.0" style="-fx-background-color: #D4D4D4;">
+      <JFXComboBox fx:id="date_picker" accessibleRole="DATE_PICKER" layoutX="269.0" layoutY="136.0" prefHeight="25.0" prefWidth="129.0" />
+      <TableView fx:id="table_professeurs" layoutX="61.0" layoutY="306.0" prefHeight="185.0" prefWidth="554.0" style="-fx-background-color: #D4D4D4;">
         <columns>
-          <TableColumn prefWidth="37.0" text="ID" />
-          <TableColumn prefWidth="97.0" text="Nom" />
-            <TableColumn prefWidth="95.0" text="Prénom" />
-            <TableColumn prefWidth="49.0" text="Age" />
-            <TableColumn prefWidth="107.0" text="Date de Naissance" />
-            <TableColumn minWidth="0.0" prefWidth="59.0" text="Matière" />
-            <TableColumn prefWidth="109.0" text="Département" />
+          <TableColumn fx:id="cln_id" prefWidth="37.0" text="ID" />
+          <TableColumn fx:id="cln_nom" prefWidth="97.0" text="Nom" />
+            <TableColumn fx:id="cln_prenom" prefWidth="95.0" text="Prénom" />
+            <TableColumn fx:id="cln_age" prefWidth="49.0" text="Age" />
+            <TableColumn fx:id="cln_date" prefWidth="107.0" text="Date de Naissance" />
+            <TableColumn fx:id="cln_matiere" minWidth="0.0" prefWidth="59.0" text="Matière" />
+            <TableColumn fx:id="cln_departement" prefWidth="109.0" text="Département" />
         </columns>
       </TableView>
       <JFXTextArea layoutX="60.0" layoutY="177.0" prefHeight="36.0" prefWidth="129.0" AnchorPane.leftAnchor="60.0" />
-      <TextField layoutX="60.0" layoutY="188.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="60.0" />
+      <TextField fx:id="txt_prenom" layoutX="60.0" layoutY="188.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="60.0" />
       <Label layoutX="60.0" layoutY="173.0" prefHeight="16.0" prefWidth="129.0" text="Prénom" textFill="#3c3c3c" AnchorPane.leftAnchor="60.0">
          <font>
             <Font name="Lato Black" size="12.0" />
@@ -41,28 +41,28 @@
          </font>
       </Label>
       <JFXTextArea layoutX="60.0" layoutY="125.0" prefHeight="36.0" prefWidth="129.0" AnchorPane.leftAnchor="60.0" />
-      <TextField layoutX="60.0" layoutY="136.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="60.0" />
+      <TextField fx:id="txt_nom" layoutX="60.0" layoutY="136.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="60.0" />
       <Label layoutX="60.0" layoutY="121.0" prefHeight="16.0" prefWidth="129.0" text="Nom" textFill="#3c3c3c" AnchorPane.leftAnchor="60.0">
          <font>
             <Font name="Lato Black" size="12.0" />
          </font>
       </Label>
       <JFXTextArea layoutX="487.0" layoutY="177.0" prefHeight="36.0" prefWidth="129.0" AnchorPane.rightAnchor="60.0" />
-      <TextField layoutX="487.0" layoutY="188.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" AnchorPane.rightAnchor="60.0" />
+      <TextField fx:id="txt_departement" layoutX="487.0" layoutY="188.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" AnchorPane.rightAnchor="60.0" />
       <Label layoutX="487.0" layoutY="173.0" prefHeight="16.0" prefWidth="129.0" text="Département" textFill="#3c3c3c" AnchorPane.rightAnchor="60.0">
          <font>
             <Font name="Lato Black" size="12.0" />
          </font>
       </Label>
       <JFXTextArea layoutX="487.0" layoutY="125.0" prefHeight="36.0" prefWidth="129.0" AnchorPane.rightAnchor="60.0" />
-      <TextField layoutX="487.0" layoutY="136.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" AnchorPane.rightAnchor="60.0" />
+      <TextField fx:id="txt_matiere" layoutX="487.0" layoutY="136.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" AnchorPane.rightAnchor="60.0" />
       <Label layoutX="487.0" layoutY="121.0" prefHeight="16.0" prefWidth="129.0" text="Matière" textFill="#3c3c3c" AnchorPane.rightAnchor="60.0">
          <font>
             <Font name="Lato Black" size="12.0" />
          </font>
       </Label>
       <JFXTextArea layoutX="269.0" layoutY="177.0" prefHeight="36.0" prefWidth="129.0" />
-      <TextField layoutX="268.0" layoutY="188.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" />
+      <TextField fx:id="txt_age" layoutX="268.0" layoutY="188.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" />
       <Label layoutX="270.0" layoutY="173.0" prefHeight="16.0" prefWidth="129.0" text="Age" textFill="#3c3c3c">
          <font>
             <Font name="Lato Black" size="12.0" />
@@ -71,7 +71,7 @@
       <Pane layoutX="59.0" layoutY="19.0" prefHeight="70.0" prefWidth="341.0" style="-fx-background-color: #D4D4D4; -fx-background-radius: 15;">
          <children>
             <JFXTextArea layoutX="20.0" layoutY="17.0" prefHeight="36.0" prefWidth="129.0" />
-            <TextField layoutX="20.0" layoutY="28.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: #D4D4D4;" />
+            <TextField fx:id="txt_id" layoutX="20.0" layoutY="28.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: #D4D4D4;" />
             <Label layoutX="19.0" layoutY="13.0" prefHeight="16.0" prefWidth="112.0" text="Id Professeur" textFill="#3c3c3c">
                <font>
                   <Font name="Lato Black" size="12.0" />
@@ -82,7 +82,7 @@
             </Label>
          </children>
       </Pane>
-      <JFXButton layoutX="269.0" layoutY="35.0" prefHeight="37.0" prefWidth="112.0" style="-fx-background-radius: 15; -fx-background-color: #6a6a6a; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Rechercher" textFill="WHITE">
+      <JFXButton fx:id="btn_rechercher" layoutX="269.0" layoutY="35.0" onMouseClicked="#Rechercher" prefHeight="37.0" prefWidth="112.0" style="-fx-background-radius: 15; -fx-background-color: #6a6a6a; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Rechercher" textFill="WHITE">
          <padding>
             <Insets bottom="6.0" left="15.0" right="15.0" top="6.0" />
          </padding>
@@ -90,7 +90,7 @@
             <Font name="Lato Black" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="278.0" layoutY="244.0" prefHeight="37.0" prefWidth="112.0" style="-fx-background-radius: 15; -fx-background-color: #0f91cc; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Modifier" textFill="WHITE">
+      <JFXButton fx:id="btn_modifier" layoutX="278.0" layoutY="244.0" onMouseClicked="#Modifier" prefHeight="37.0" prefWidth="112.0" style="-fx-background-radius: 15; -fx-background-color: #0f91cc; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Modifier" textFill="WHITE">
          <padding>
             <Insets bottom="6.0" left="15.0" right="15.0" top="6.0" />
          </padding>
@@ -98,7 +98,7 @@
             <Font name="Lato Black" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="440.0" layoutY="244.0" prefHeight="37.0" prefWidth="112.0" style="-fx-background-radius: 15; -fx-background-color: #e11414; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Supprimer" textFill="WHITE">
+      <JFXButton fx:id="btn_supprimer" layoutX="440.0" layoutY="244.0" onMouseClicked="#Supprimer" prefHeight="37.0" prefWidth="112.0" style="-fx-background-radius: 15; -fx-background-color: #e11414; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Supprimer" textFill="WHITE">
          <font>
             <Font name="Lato Black" size="15.0" />
          </font>
@@ -109,7 +109,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="120.0" layoutY="244.0" prefHeight="37.0" prefWidth="112.0" style="-fx-background-radius: 15; -fx-background-color: #009d34; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Ajouter" textFill="WHITE">
+      <JFXButton fx:id="btn_ajouter" layoutX="120.0" layoutY="244.0" onMouseClicked="#Ajouter" prefHeight="37.0" prefWidth="112.0" style="-fx-background-radius: 15; -fx-background-color: #009d34; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Ajouter" textFill="WHITE">
          <padding>
             <Insets bottom="6.0" left="15.0" right="15.0" top="6.0" />
          </padding>
