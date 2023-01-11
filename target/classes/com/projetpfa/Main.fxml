@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
@@ -11,15 +10,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="463.0" prefWidth="705.0" styleClass="parent" stylesheets="@../../../java/com/projetpfa/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetpfa.MainController">
+<AnchorPane prefHeight="463.0" prefWidth="705.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetpfa.MainController">
    <children>
-      <Pane layoutX="132.0" layoutY="100.0" prefHeight="393.0" prefWidth="689.0" styleClass="pane" stylesheets="@../../../java/com/projetpfa/application.css" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="35.0">
+      <Pane layoutX="132.0" layoutY="100.0" prefHeight="393.0" prefWidth="689.0" style="-fx-background-color: #427ceb;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="35.0">
          <children>
-            <JFXButton fx:id="btn_sinscrire" layoutX="87.0" layoutY="303.0" onAction="#openSignUp" onMouseClicked="#openSignUp" prefHeight="37.0" prefWidth="116.0" style="-fx-background-radius: 15;" stylesheets="@../../../java/com/projetpfa/application.css" text="S'inscrire">
-               <styleClass>
-                  <String fx:value="btn-seconnecter" />
-                  <String fx:value="btn" />
-               </styleClass>
+            <JFXButton fx:id="btn_sinscrire" layoutX="87.0" layoutY="303.0" onAction="#openSignUp" onMouseClicked="#openSignUp" prefHeight="37.0" prefWidth="116.0" style="-fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0); -fx-background-color: #ffffff;" text="S'inscrire">
                <font>
                   <Font name="Lato Black" size="15.0" />
                </font>
@@ -37,11 +32,7 @@
                   <Image url="@mines-rabat-logo.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="btn_seconnecter" layoutX="452.0" layoutY="303.0" onAction="#openSignIn" onMouseClicked="#openSignIn" prefHeight="37.0" prefWidth="116.0" style="-fx-background-radius: 15;" stylesheets="@../../../java/com/projetpfa/application.css" text="Se connecter">
-               <styleClass>
-                  <String fx:value="btn-seconnecter" />
-                  <String fx:value="btn" />
-               </styleClass>
+            <JFXButton fx:id="btn_seconnecter" layoutX="452.0" layoutY="303.0" onAction="#openSignIn" onMouseClicked="#openSignIn" prefHeight="37.0" prefWidth="116.0" style="-fx-background-radius: 15; -fx-background-color: #ffffff; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Se connecter">
                <font>
                   <Font name="Lato Black" size="15.0" />
                </font>
@@ -49,7 +40,7 @@
                   <Insets bottom="5.0" left="13.0" right="13.0" top="5.0" />
                </padding>
             </JFXButton>
-            <VBox fx:id="vbox" layoutX="41.0" layoutY="-20.0" prefHeight="433.0" prefWidth="323.0" styleClass="white-pane" stylesheets="@../../../java/com/projetpfa/application.css">
+            <VBox fx:id="vbox" layoutX="41.0" layoutY="-20.0" prefHeight="433.0" prefWidth="323.0" style="-fx-background-color: #ffffff;">
                <children>
                   <ImageView fitHeight="435.0" fitWidth="326.0">
                      <image>

@@ -9,24 +9,17 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextArea;
-import com.jfoenix.controls.JFXTextArea;
 
-import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -50,7 +43,6 @@ public class SignInController implements Initializable {
     @FXML
     private VBox vbox;
     private Parent fxml;
-    private AnchorPane root;
 
     @FXML
     void openHome() {
@@ -68,11 +60,12 @@ public class SignInController implements Initializable {
                     try {
                         CurrentUser = result.getString("user");
                     } catch (SQLException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
+
                     vbox.getScene().getWindow().hide();
                     Stage home = new Stage();
+
                     try {
                         fxml = FXMLLoader.load(getClass().getResource("Home.fxml"));
                         Scene scene = new Scene(fxml);
@@ -85,9 +78,11 @@ public class SignInController implements Initializable {
                     }
                 }
             }
+
             if (c == 0) {
                 infoBox("Enter Correct Username and Password", "Failed", null);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

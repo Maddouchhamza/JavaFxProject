@@ -3,28 +3,30 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
-<?import java.lang.String?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vbox" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="323.0" styleClass="white-pane" stylesheets="@../../../java/com/projetpfa/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetpfa.SignUpController">
+<VBox fx:id="vbox" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="323.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetpfa.SignUpController">
    <children>
       <Pane prefHeight="428.0" prefWidth="323.0">
          <children>
-            <JFXButton layoutX="112.0" layoutY="371.0" prefHeight="33.0" prefWidth="101.0" style="-fx-background-radius: 15;" stylesheets="@../../../java/com/projetpfa/application.css" text="S'inscrire">
+            <TextField layoutX="60.0" layoutY="96.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: TRANSPARENT;" />
+            <ImageView fitHeight="440.0" fitWidth="323.0" layoutY="-5.0" opacity="0.43">
+               <image>
+                  <Image url="@305570657_1525710994532378_4080357582297623560_n.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="112.0" layoutY="369.0" prefHeight="37.0" prefWidth="111.0" style="-fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0); -fx-background-color: #295ab5;" text="S'inscrire" textFill="WHITE">
                <font>
-                  <Font name="Lato Black" size="13.0" />
+                  <Font name="Lato Black" size="16.0" />
                </font>
-               <styleClass>
-                  <String fx:value="pink-btn" />
-                  <String fx:value="btn" />
-               </styleClass>
             </JFXButton>
             <JFXTextArea layoutX="60.0" layoutY="85.0" prefHeight="37.0" prefWidth="203.0" />
-            <TextField layoutX="60.0" layoutY="96.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
             <Label layoutX="60.0" layoutY="81.0" text="Nom d'utilisateur" textFill="#3c3c3c">
                <font>
                   <Font name="Lato Black" size="13.0" />
@@ -34,7 +36,7 @@
                </graphic>
             </Label>
             <JFXTextArea layoutX="61.0" layoutY="157.0" prefHeight="37.0" prefWidth="203.0" />
-            <TextField layoutX="61.0" layoutY="168.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
+            <TextField layoutX="61.0" layoutY="168.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: TRANSPARENT;" />
             <Label layoutX="61.0" layoutY="153.0" text="Mot de passe" textFill="#3c3c3c">
                <font>
                   <Font name="Lato Black" size="13.0" />
@@ -44,7 +46,7 @@
                </graphic>
             </Label>
             <JFXTextArea layoutX="61.0" layoutY="232.0" prefHeight="37.0" prefWidth="203.0" />
-            <TextField layoutX="61.0" layoutY="243.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
+            <TextField layoutX="61.0" layoutY="243.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: TRANSPARENT;" />
             <Label layoutX="61.0" layoutY="229.0" text="Chef du département" textFill="#3c3c3c">
                <font>
                   <Font name="Lato Black" size="13.0" />
@@ -54,18 +56,18 @@
                </graphic>
             </Label>
             <JFXTextArea layoutX="62.0" layoutY="304.0" prefHeight="37.0" prefWidth="203.0" />
-            <TextField layoutX="62.0" layoutY="315.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: WHITE;" />
+            <TextField layoutX="62.0" layoutY="315.0" prefHeight="27.0" prefWidth="203.0" style="-fx-background-color: TRANSPARENT;" />
             <Label layoutX="62.0" layoutY="300.0" text="Année de création" textFill="#3c3c3c">
                <font>
                   <Font name="Lato Black" size="13.0" />
                </font>
                <graphic>
-                  <MaterialDesignIconView fill="#3c3c3c" glyphName="CALENDAR"  size="18"  text="" wrappingWidth="23.0" />
+                  <MaterialDesignIconView fill="#3c3c3c" glyphName="CALENDAR" size="18" text="" wrappingWidth="23.0" />
                </graphic>
             </Label>
-            <Label alignment="CENTER" layoutX="111.0" layoutY="27.0" prefHeight="21.0" prefWidth="101.0" text="Inscription" textAlignment="CENTER" textFill="#c5304d" wrapText="true">
+            <Label alignment="CENTER" layoutY="27.0" prefHeight="26.0" prefWidth="323.0" text="Inscription" textAlignment="CENTER" textFill="#295ab5" wrapText="true">
                <font>
-                  <Font name="Lato Black" size="17.0" />
+                  <Font name="Lato Black" size="24.0" />
                </font>
             </Label>
          </children>

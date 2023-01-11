@@ -52,7 +52,7 @@ public class AccueilController implements Initializable {
     private Parent fxml;
 
     @FXML
-    private AnchorPane home;
+    private AnchorPane root;
 
     @FXML
     void ShowInfo() {
@@ -75,16 +75,16 @@ public class AccueilController implements Initializable {
     @FXML
     void Update() {
 
-        String sql = "update departements set user=?, password=?, chef_dep=?, annee_creation=? where id_dep = '"
-                + txt_id_dep.getText() + "'";
+        String sql = "update departements set user=?, password=?, chef_dep=?, annee_creation=? where user = '"
+                + CurrentUser + "'";
 
         try {
-            System.out.println(1);
             st = cnx.prepareStatement(sql);
             st.setString(1, txt_user.getText());
             st.setString(2, txt_password.getText());
             st.setString(3, txt_chef_dep.getText());
-            st.setString(4, txt_creation_date.getText());
+            st.setInt(4, Integer.parseInt(txt_creation_date.getText()));
+            System.out.println("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();
@@ -100,7 +100,7 @@ public class AccueilController implements Initializable {
         try {
             st = cnx.prepareStatement(sql2);
             st.executeUpdate(sql2);
-            home.getScene().getWindow().setOnCloseRequest(null);
+            root.getScene().getWindow().hide();
             Stage home = new Stage();
             try {
                 fxml = FXMLLoader.load(getClass().getResource("Main.fxml"));
@@ -121,6 +121,7 @@ public class AccueilController implements Initializable {
     public void initialize(URL arg0, ResourceBundle arg1) {
         cnx = ConnexionMysql.connexionDB();
         ShowInfo();
+        txt_id_dep.setEditable(false);
     }
 
 }
