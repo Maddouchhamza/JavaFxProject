@@ -16,12 +16,17 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -31,6 +36,7 @@ public class SignInController implements Initializable {
     public PreparedStatement st;
     public ResultSet result;
     public static String CurrentUser;
+    private int c;
 
     @FXML
     private JFXButton btn_seconnecter;
@@ -55,8 +61,10 @@ public class SignInController implements Initializable {
         try {
             st = cnx.prepareStatement(sql);
             result = st.executeQuery();
+
             while (result.next()) {
                 if (nom.equals(result.getString("user")) && password.equals(result.getString("password"))) {
+                    c = c + 1;
                     try {
                         CurrentUser = result.getString("user");
                     } catch (SQLException e) {
@@ -77,9 +85,20 @@ public class SignInController implements Initializable {
                     }
                 }
             }
+            if (c == 0) {
+                infoBox("Enter Correct Username and Password", "Failed", null);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void infoBox(String infoMessage, String titleBar, String headerMessage) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle(titleBar);
+        alert.setHeaderText(headerMessage);
+        alert.setContentText(infoMessage);
+        alert.showAndWait();
     }
 
     @Override
