@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.Parent;
@@ -37,7 +38,7 @@ public class SignInController implements Initializable {
     private JFXButton btn_seconnecter;
 
     @FXML
-    private TextField txt_password;
+    private PasswordField txt_password;
 
     @FXML
     private TextField txt_user;
