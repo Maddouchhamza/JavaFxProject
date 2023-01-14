@@ -1,9 +1,11 @@
 package com.projetpfa;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
@@ -19,13 +21,16 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
 import static com.projetpfa.SignInController.CurrentUser;
+import static com.projetpfa.infoBox.infobox;
 
 public class AccueilController implements Initializable {
 
     Connection cnx;
     public PreparedStatement st;
     public ResultSet result;
+    private int counter = 0;
 
     @FXML
     private JFXButton btn_delete;
@@ -56,11 +61,11 @@ public class AccueilController implements Initializable {
 
     @FXML
     void ShowInfo() {
-        String sql = "select * from departements where user= '" + CurrentUser + "'"; // A revenir
+        String sql = "select * from departements where user= '" + CurrentUser + "'";
         try {
             st = cnx.prepareStatement(sql);
             result = st.executeQuery();
-            while (result.next()) {
+            if (result.next()) {
                 txt_id_dep.setText(result.getString("id_dep"));
                 txt_user.setText(result.getString("user"));
                 txt_password.setText(result.getString("password"));
@@ -75,21 +80,55 @@ public class AccueilController implements Initializable {
     @FXML
     void Update() {
 
-        String sql = "update departements set user=?, password=?, chef_dep=?, annee_creation=? where user = '"
-                + CurrentUser + "'";
+        String sql = "update departements set user=?, password=?, chef_dep=?, annee_creation=? where id_dep = '"
+                + txt_id_dep.getText() + "'";
 
         try {
             st = cnx.prepareStatement(sql);
             st.setString(1, txt_user.getText());
             st.setString(2, txt_password.getText());
             st.setString(3, txt_chef_dep.getText());
-            st.setInt(4, Integer.parseInt(txt_creation_date.getText()));
-            System.out.println("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-            st.executeUpdate(sql);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
+            String date = txt_creation_date.getText();
+            if (date.matches("^[0-9]*$")) { // handling int value exception in data base
+                st.setInt(4, Integer.parseInt(txt_creation_date.getText()));
+            } else {
+                infobox("Veuillez remplir le champs 'Année de création' par une valeur entière!", "Attention", null);
+            }
+
+            st.executeUpdate(); // source du probleme st.executeUpdate(sql);
+
+            // ---------------------------------------------------------------------------------------------------
+            // mettre à jour CurrentUser pour reloader à nv home avec le nouveu nom du
+            // département, reload ne s'effectue que si user est changer sinon on affiche
+            // que les champs son misent àjours
+
+            if (!CurrentUser.equals(txt_user.getText())) {
+                CurrentUser = txt_user.getText();
+                infobox("Mise à jour réussite! La fenêtre sera actualiser!", "Done", null);
+                root.getScene().getWindow().hide();
+                Stage home = new Stage();
+                try {
+                    fxml = FXMLLoader.load(getClass().getResource("Home.fxml"));
+                    Scene scene = new Scene(fxml);
+                    home.setScene(scene);
+                    scene.setFill(Color.TRANSPARENT); // 2 ligne pour éliminer les bordures de la fenetre
+                    home.initStyle(StageStyle.TRANSPARENT);
+                    home.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                counter = counter + 1;
+            }
+            if (counter == 0) {
+                infobox("Mise à jour réussite!", "Done", null);
+            }
+
+            // ----------------------------------------------------------------------------------------------------
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
     }
 
     @FXML

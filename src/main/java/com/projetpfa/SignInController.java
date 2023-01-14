@@ -23,13 +23,15 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import static com.projetpfa.infoBox.infobox;
+
 public class SignInController implements Initializable {
 
     Connection cnx;
     public PreparedStatement st;
     public ResultSet result;
     public static String CurrentUser;
-    private int c;
+    private int c; // pour fixer le bug d'affichage de plusieurs fenetre alert
 
     @FXML
     private JFXButton btn_seconnecter;
@@ -80,20 +82,12 @@ public class SignInController implements Initializable {
             }
 
             if (c == 0) {
-                infoBox("Enter Correct Username and Password", "Failed", null);
+                infobox("Enter Correct Username and Password", "Failed", null);
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void infoBox(String infoMessage, String titleBar, String headerMessage) {
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle(titleBar);
-        alert.setHeaderText(headerMessage);
-        alert.setContentText(infoMessage);
-        alert.showAndWait();
     }
 
     @Override
