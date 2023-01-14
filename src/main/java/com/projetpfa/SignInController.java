@@ -31,7 +31,7 @@ public class SignInController implements Initializable {
     public PreparedStatement st;
     public ResultSet result;
     public static String CurrentUser;
-    private int c; // pour fixer le bug d'affichage de plusieurs fenetre alert
+    private int c = 0; // pour fixer le bug d'affichage de plusieurs fenetre alert
 
     @FXML
     private JFXButton btn_seconnecter;
