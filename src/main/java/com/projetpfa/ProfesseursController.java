@@ -99,6 +99,20 @@ public class ProfesseursController implements Initializable {
     public ObservableList<Professeurs> data = FXCollections.observableArrayList();
 
     @FXML
+    void tableProfesseurs() {
+        Professeurs professeurs = table_professeurs.getSelectionModel().getSelectedItem();
+        txt_id.setText(Integer.toString(professeurs.getId()));
+        txt_nom.setText(professeurs.getNom());
+        txt_prenom.setText(professeurs.getPrenom());
+        txt_age.setText(Integer.toString(professeurs.getAge()));
+        Date date = professeurs.getDate_naissance();
+        date_picker.setValue(date.toLocalDate());
+        txt_departement.setText(professeurs.getDepartement());
+        txt_matiere.setText(professeurs.getMatiere());
+
+    }
+
+    @FXML
     void Ajouter() {
         String nom = txt_nom.getText();
         String prenom = txt_prenom.getText();
@@ -119,7 +133,7 @@ public class ProfesseursController implements Initializable {
                     st2 = cnx.prepareStatement(sql2);
                     result2 = st2.executeQuery();
                     if (result2.next()) {
-                        id_matiere = result2.getInt("id_matieres");
+                        id_matiere = result2.getInt("id_matiere");
                     } else {
                         infobox("Cette matière n'est pas enseignée dans votre établissemet. Veuillez rentrer un nouvelle matière !",
                                 "Failed",
@@ -151,11 +165,11 @@ public class ProfesseursController implements Initializable {
                     date_picker.setValue(null);
                     txt_departement.setText("");
                     txt_matiere.setText("");
+                    showProfesseurs();
 
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-                showProfesseurs();
 
             }
 
@@ -167,43 +181,42 @@ public class ProfesseursController implements Initializable {
 
     @FXML
     void Modifier() {
-
         try {
-
             String sql = "select * from professeurs natural join matieres where id_prof ='" + txt_id.getText() + "'";
             st = cnx.prepareStatement(sql);
             result = st.executeQuery();
 
-            while (result.next()) {
+            if (result.next()) {
                 if (txt_matiere.getText() != result.getString("nom_matiere")) {
 
                     String sql2 = "select * from matieres where nom_matiere='" + txt_matiere.getText() + "'";
 
                     st2 = cnx.prepareStatement(sql2);
-                    result2 = st.executeQuery();
+                    result2 = st2.executeQuery();
+                    if (result2.next()) {
+                        int nv_id_matiere = result2.getInt("id_matiere");
+                        java.util.Date date = java.util.Date
+                                .from(date_picker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+                        Date sqlDate = new Date(date.getTime());
 
-                    int nv_id_matiere = result2.getInt("id_matiere");
-                    java.util.Date date = java.util.Date
-                            .from(date_picker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
-                    Date sqlDate = new Date(date.getTime());
+                        String sql3 = "update professeurs set nom=?, prenom=?, age=?, date_naissance=?, id_matiere=? where id_prof='"
+                                + txt_id.getText() + "'";
 
-                    String sql3 = "update professeurs set nom_prof=?, prenom_prof=?, age=?, date_naissance=?, id_matiere=? where id_prof='"
-                            + txt_id.getText() + "'";
-
-                    st3 = cnx.prepareStatement(sql3);
-                    st3.setString(1, txt_nom.getText());
-                    st3.setString(2, txt_prenom.getText());
-                    st3.setInt(3, Integer.parseInt(txt_age.getText()));
-                    st3.setDate(4, sqlDate);
-                    st3.setInt(5, nv_id_matiere);
-                    st3.executeUpdate();
+                        st3 = cnx.prepareStatement(sql3);
+                        st3.setString(1, txt_nom.getText());
+                        st3.setString(2, txt_prenom.getText());
+                        st3.setInt(3, Integer.parseInt(txt_age.getText()));
+                        st3.setDate(4, sqlDate);
+                        st3.setInt(5, nv_id_matiere);
+                        st3.executeUpdate();
+                    }
 
                 } else {
                     java.util.Date date = java.util.Date
                             .from(date_picker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
                     Date sqlDate = new Date(date.getTime());
 
-                    String sql2 = "update professeurs set nom_prof=?, prenom_prof=?, age=?, date_naissance=? where id_prof='"
+                    String sql2 = "update professeurs set nom=?, prenom=?, age=?, date_naissance=? where id_prof='"
                             + txt_id.getText() + "'";
 
                     st2 = cnx.prepareStatement(sql2);
@@ -265,7 +278,7 @@ public class ProfesseursController implements Initializable {
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
-        // showProfesseurs();
+        showProfesseurs();
     }
 
     public void showProfesseurs() {

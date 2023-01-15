@@ -16,7 +16,7 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="676.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetpfa.ProfesseursController">
    <children>
-      <TableView fx:id="table_professeurs" layoutX="61.0" layoutY="306.0" prefHeight="185.0" prefWidth="554.0" style="-fx-background-color: #D4D4D4;">
+      <TableView fx:id="table_professeurs" layoutX="61.0" layoutY="306.0" onMouseClicked="#tableProfesseurs" prefHeight="185.0" prefWidth="554.0" style="-fx-background-color: #D4D4D4;">
         <columns>
           <TableColumn fx:id="cln_id" prefWidth="37.0" text="ID" />
           <TableColumn fx:id="cln_nom" prefWidth="97.0" text="Nom" />
