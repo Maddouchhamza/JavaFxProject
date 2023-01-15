@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -14,9 +14,8 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="676.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="500.0" prefWidth="676.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetpfa.ProfesseursController">
    <children>
-      <JFXComboBox fx:id="date_picker" accessibleRole="DATE_PICKER" layoutX="269.0" layoutY="136.0" prefHeight="25.0" prefWidth="129.0" />
       <TableView fx:id="table_professeurs" layoutX="61.0" layoutY="306.0" prefHeight="185.0" prefWidth="554.0" style="-fx-background-color: #D4D4D4;">
         <columns>
           <TableColumn fx:id="cln_id" prefWidth="37.0" text="ID" />
@@ -29,45 +28,20 @@
         </columns>
       </TableView>
       <JFXTextArea layoutX="60.0" layoutY="177.0" prefHeight="36.0" prefWidth="129.0" AnchorPane.leftAnchor="60.0" />
-      <TextField fx:id="txt_prenom" layoutX="60.0" layoutY="188.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="60.0" />
-      <Label layoutX="60.0" layoutY="173.0" prefHeight="16.0" prefWidth="129.0" text="Prénom" textFill="#3c3c3c" AnchorPane.leftAnchor="60.0">
-         <font>
-            <Font name="Lato Black" size="12.0" />
-         </font>
-      </Label>
+      <TextField fx:id="txt_prenom" layoutX="60.0" layoutY="188.0" prefHeight="22.0" prefWidth="129.0" promptText="Prénom" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="60.0" />
       <Label layoutX="269.0" layoutY="121.0" prefHeight="16.0" prefWidth="129.0" text="Date de naissance" textFill="#3c3c3c">
          <font>
             <Font name="Lato Black" size="12.0" />
          </font>
       </Label>
       <JFXTextArea layoutX="60.0" layoutY="125.0" prefHeight="36.0" prefWidth="129.0" AnchorPane.leftAnchor="60.0" />
-      <TextField fx:id="txt_nom" layoutX="60.0" layoutY="136.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="60.0" />
-      <Label layoutX="60.0" layoutY="121.0" prefHeight="16.0" prefWidth="129.0" text="Nom" textFill="#3c3c3c" AnchorPane.leftAnchor="60.0">
-         <font>
-            <Font name="Lato Black" size="12.0" />
-         </font>
-      </Label>
+      <TextField fx:id="txt_nom" layoutX="60.0" layoutY="136.0" prefHeight="22.0" prefWidth="129.0" promptText="Nom" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="60.0" />
       <JFXTextArea layoutX="487.0" layoutY="177.0" prefHeight="36.0" prefWidth="129.0" AnchorPane.rightAnchor="60.0" />
-      <TextField fx:id="txt_departement" layoutX="487.0" layoutY="188.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" AnchorPane.rightAnchor="60.0" />
-      <Label layoutX="487.0" layoutY="173.0" prefHeight="16.0" prefWidth="129.0" text="Département" textFill="#3c3c3c" AnchorPane.rightAnchor="60.0">
-         <font>
-            <Font name="Lato Black" size="12.0" />
-         </font>
-      </Label>
+      <TextField fx:id="txt_departement" layoutX="487.0" layoutY="188.0" prefHeight="22.0" prefWidth="129.0" promptText="Département" style="-fx-background-color: WHITE;" AnchorPane.rightAnchor="60.0" />
       <JFXTextArea layoutX="487.0" layoutY="125.0" prefHeight="36.0" prefWidth="129.0" AnchorPane.rightAnchor="60.0" />
-      <TextField fx:id="txt_matiere" layoutX="487.0" layoutY="136.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" AnchorPane.rightAnchor="60.0" />
-      <Label layoutX="487.0" layoutY="121.0" prefHeight="16.0" prefWidth="129.0" text="Matière" textFill="#3c3c3c" AnchorPane.rightAnchor="60.0">
-         <font>
-            <Font name="Lato Black" size="12.0" />
-         </font>
-      </Label>
+      <TextField fx:id="txt_matiere" layoutX="487.0" layoutY="136.0" prefHeight="22.0" prefWidth="129.0" promptText="Matière" style="-fx-background-color: WHITE;" AnchorPane.rightAnchor="60.0" />
       <JFXTextArea layoutX="269.0" layoutY="177.0" prefHeight="36.0" prefWidth="129.0" />
-      <TextField fx:id="txt_age" layoutX="268.0" layoutY="188.0" prefHeight="22.0" prefWidth="129.0" style="-fx-background-color: WHITE;" />
-      <Label layoutX="270.0" layoutY="173.0" prefHeight="16.0" prefWidth="129.0" text="Age" textFill="#3c3c3c">
-         <font>
-            <Font name="Lato Black" size="12.0" />
-         </font>
-      </Label>
+      <TextField fx:id="txt_age" layoutX="268.0" layoutY="188.0" prefHeight="22.0" prefWidth="129.0" promptText="Age" style="-fx-background-color: WHITE;" />
       <Pane layoutX="59.0" layoutY="19.0" prefHeight="70.0" prefWidth="341.0" style="-fx-background-color: #D4D4D4; -fx-background-radius: 15;">
          <children>
             <JFXTextArea layoutX="20.0" layoutY="17.0" prefHeight="36.0" prefWidth="129.0" />
@@ -117,5 +91,6 @@
             <Font name="Lato Black" size="15.0" />
          </font>
       </JFXButton>
+      <DatePicker fx:id="date_picker" layoutX="266.0" layoutY="143.0" prefHeight="25.0" prefWidth="129.0" />
    </children>
 </AnchorPane>

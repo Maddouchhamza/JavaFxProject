@@ -32,6 +32,7 @@ public class SignInController implements Initializable {
     public PreparedStatement st;
     public ResultSet result;
     public static String CurrentUser;
+    public static Integer id_dep;
     private int c = 0; // pour fixer le bug d'affichage de plusieurs fenetre alert
 
     @FXML
@@ -62,6 +63,7 @@ public class SignInController implements Initializable {
                     c = c + 1;
                     try {
                         CurrentUser = result.getString("user");
+                        id_dep = result.getInt("id_dep");
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }

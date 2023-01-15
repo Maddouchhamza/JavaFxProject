@@ -4,23 +4,23 @@ import java.sql.Date;
 
 public class Professeurs {
     int id;
-    String Nom;
-    String Prenom;
-    int Matiere;
+    String nom;
+    String prenom;
+    String matiere;
     int age;
-    int departement;
+    String departement;
     Date date_naissance;
 
     public Professeurs() {
         super();
     }
 
-    public Professeurs(int id, String Nom, String Prenom, int Matiere, int age, int departement,
+    public Professeurs(int id, String nom, String prenom, String matiere, int age, String departement,
             Date date_naissance) {
         this.id = id;
-        this.Nom = Nom;
-        this.Prenom = Prenom;
-        this.Matiere = Matiere;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.matiere = matiere;
         this.age = age;
         this.date_naissance = date_naissance;
         this.departement = departement;
@@ -35,27 +35,27 @@ public class Professeurs {
     }
 
     public String getNom() {
-        return Nom;
+        return nom;
     }
 
     public void setNom(String nom) {
-        Nom = nom;
+        this.nom = nom;
     }
 
     public String getPrenom() {
-        return Prenom;
+        return prenom;
     }
 
     public void setPrenom(String prenom) {
-        Prenom = prenom;
+        this.prenom = prenom;
     }
 
-    public int getMatiere() {
-        return Matiere;
+    public String getMatiere() {
+        return matiere;
     }
 
-    public void setMatiere(int matiere) {
-        Matiere = matiere;
+    public void setMatiere(String matiere) {
+        this.matiere = matiere;
     }
 
     public int getAge() {
@@ -66,11 +66,11 @@ public class Professeurs {
         this.age = age;
     }
 
-    public int getDepartement() {
+    public String getDepartement() {
         return departement;
     }
 
-    public void setDepartement(int departement) {
+    public void setDepartement(String departement) {
         this.departement = departement;
     }
 
