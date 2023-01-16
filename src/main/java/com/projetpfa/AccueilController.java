@@ -133,6 +133,25 @@ public class AccueilController implements Initializable {
 
     @FXML
     void Delete() {
+        infobox("Attention: Tout les professeurs et les étudiants du départements seront supprimés!", "Alert", null);
+
+        String sql1 = "delete from professeurs where id_dep = '" + txt_id_dep.getText() + "'";
+
+        try {
+            st = cnx.prepareStatement(sql1);
+            st.executeUpdate(sql1);
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+
+        String sql = "delete from etudiants where id_dep = '" + txt_id_dep.getText() + "'";
+
+        try {
+            st = cnx.prepareStatement(sql);
+            st.executeUpdate(sql);
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
 
         String sql2 = "delete from departements where id_dep = '" + txt_id_dep.getText() + "'";
 
@@ -154,6 +173,9 @@ public class AccueilController implements Initializable {
         } catch (Exception e1) {
             e1.printStackTrace();
         }
+
+        infobox("Département supprimé avec succès!", "Done", null);
+
     }
 
     @Override

@@ -135,7 +135,7 @@ public class ProfesseursController implements Initializable {
                     if (result2.next()) {
                         id_matiere = result2.getInt("id_matiere");
                     } else {
-                        infobox("Cette matière n'est pas enseignée dans votre établissemet. Veuillez rentrer un nouvelle matière !",
+                        infobox("Cette matière n'est pas enseignée dans votre établissemet. Veuillez rentrer une nouvelle matière !",
                                 "Failed",
                                 null);
                     }
@@ -151,7 +151,12 @@ public class ProfesseursController implements Initializable {
                     st.setString(1, txt_nom.getText());
                     st.setString(2, txt_prenom.getText());
                     st.setDate(3, sqlDate);
-                    st.setInt(4, Integer.parseInt(txt_age.getText()));
+                    String age = txt_age.getText();
+                    if (age.matches("^[0-9]*$")) { // handling int value exception in data base
+                        st.setInt(4, Integer.parseInt(txt_age.getText()));
+                    } else {
+                        infobox("Veuillez remplir le champs 'Age' par une valeur entière!", "Attention", null);
+                    }
                     st.setInt(5, id_dep);
                     st.setInt(6, id_matiere);
 
@@ -205,10 +210,27 @@ public class ProfesseursController implements Initializable {
                         st3 = cnx.prepareStatement(sql3);
                         st3.setString(1, txt_nom.getText());
                         st3.setString(2, txt_prenom.getText());
-                        st3.setInt(3, Integer.parseInt(txt_age.getText()));
+
+                        String age = txt_age.getText();
+                        if (age.matches("^[0-9]*$")) { // handling int value exception in data base
+                            st3.setInt(3, Integer.parseInt(txt_age.getText()));
+                        } else {
+                            infobox("Veuillez remplir le champs 'Age' par une valeur entière!", "Attention", null);
+                        }
+
                         st3.setDate(4, sqlDate);
                         st3.setInt(5, nv_id_matiere);
                         st3.executeUpdate();
+                        infobox("Informations modifié avec succès!", "Done",
+                                null);
+                        txt_age.setText("");
+                        txt_id.setText("");
+                        txt_nom.setText("");
+                        txt_prenom.setText("");
+                        date_picker.setValue(null);
+                        txt_departement.setText("");
+                        txt_matiere.setText("");
+
                     }
 
                 } else {
@@ -222,9 +244,26 @@ public class ProfesseursController implements Initializable {
                     st2 = cnx.prepareStatement(sql2);
                     st2.setString(1, txt_nom.getText());
                     st2.setString(2, txt_prenom.getText());
-                    st2.setInt(3, Integer.parseInt(txt_age.getText()));
+
+                    String age = txt_age.getText();
+                    if (age.matches("^[0-9]*$")) { // handling int value exception in data base
+                        st3.setInt(3, Integer.parseInt(txt_age.getText()));
+                    } else {
+                        infobox("Veuillez remplir le champs 'Age' par une valeur entière!", "Attention", null);
+                    }
                     st2.setDate(4, sqlDate);
                     st2.executeUpdate();
+
+                    infobox("Informations modifié avec succès!", "Done",
+                            null);
+                    txt_age.setText("");
+                    txt_id.setText("");
+                    txt_nom.setText("");
+                    txt_prenom.setText("");
+                    date_picker.setValue(null);
+                    txt_departement.setText("");
+                    txt_matiere.setText("");
+
                 }
             }
             showProfesseurs();

@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.channels.AcceptPendingException;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
@@ -77,6 +78,7 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         CurrentUserlab.setText(CurrentUser);
+        accueil();
     }
 
 }
