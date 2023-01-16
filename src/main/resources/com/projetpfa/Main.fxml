@@ -9,12 +9,18 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="463.0" prefWidth="705.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetpfa.MainController">
    <children>
       <Pane layoutX="132.0" layoutY="100.0" prefHeight="393.0" prefWidth="689.0" style="-fx-background-color: #427ceb;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="35.0">
          <children>
-            <JFXButton fx:id="btn_sinscrire" layoutX="87.0" layoutY="303.0" onAction="#openSignUp" onMouseClicked="#openSignUp" prefHeight="37.0" prefWidth="116.0" style="-fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0); -fx-background-color: #ffffff;" text="S'inscrire">
+            <Text fill="WHITE" layoutX="92.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EDIS" textAlignment="CENTER" wrappingWidth="106.23899841308594">
+               <font>
+                  <Font name="Lato Black" size="42.0" />
+               </font>
+            </Text>
+            <JFXButton fx:id="btn_sinscrire" layoutX="87.0" layoutY="320.0" onAction="#openSignUp" onMouseClicked="#openSignUp" prefHeight="37.0" prefWidth="116.0" style="-fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0); -fx-background-color: #ffffff;" text="S'inscrire">
                <font>
                   <Font name="Lato Black" size="15.0" />
                </font>
@@ -22,17 +28,17 @@
                   <Insets bottom="5.0" left="13.0" right="13.0" top="5.0" />
                </padding>
             </JFXButton>
-            <ImageView fitHeight="226.0" fitWidth="194.0" layoutX="48.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="226.0" fitWidth="194.0" layoutX="48.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@mines-rabat-logo.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="226.0" fitWidth="194.0" layoutX="413.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="226.0" fitWidth="194.0" layoutX="413.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@mines-rabat-logo.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="btn_seconnecter" layoutX="452.0" layoutY="303.0" onAction="#openSignIn" onMouseClicked="#openSignIn" prefHeight="37.0" prefWidth="116.0" style="-fx-background-radius: 15; -fx-background-color: #ffffff; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Se connecter">
+            <JFXButton fx:id="btn_seconnecter" layoutX="452.0" layoutY="323.0" onAction="#openSignIn" onMouseClicked="#openSignIn" prefHeight="37.0" prefWidth="116.0" style="-fx-background-radius: 15; -fx-background-color: #ffffff; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Se connecter">
                <font>
                   <Font name="Lato Black" size="15.0" />
                </font>
@@ -40,6 +46,11 @@
                   <Insets bottom="5.0" left="13.0" right="13.0" top="5.0" />
                </padding>
             </JFXButton>
+            <Text fill="WHITE" layoutX="457.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EDIS" textAlignment="CENTER" wrappingWidth="106.23899841308594">
+               <font>
+                  <Font name="Lato Black" size="42.0" />
+               </font>
+            </Text>
             <VBox fx:id="vbox" layoutX="41.0" layoutY="-20.0" prefHeight="433.0" prefWidth="323.0" style="-fx-background-color: #ffffff;">
                <children>
                   <ImageView fitHeight="435.0" fitWidth="326.0">

@@ -134,43 +134,43 @@ public class ProfesseursController implements Initializable {
                     result2 = st2.executeQuery();
                     if (result2.next()) {
                         id_matiere = result2.getInt("id_matiere");
+                        java.util.Date date = java.util.Date
+                                .from(date_picker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+                        Date sqlDate = new Date(date.getTime());
+
+                        String sql = "insert into professeurs(nom,prenom,date_naissance,age,id_dep,id_matiere) values(?,?,?,?,?,?)";
+
+                        st = cnx.prepareStatement(sql);
+
+                        st.setString(1, txt_nom.getText());
+                        st.setString(2, txt_prenom.getText());
+                        st.setDate(3, sqlDate);
+                        String age = txt_age.getText();
+                        if (age.matches("^[0-9]*$")) { // handling int value exception in data base
+                            st.setInt(4, Integer.parseInt(txt_age.getText()));
+                        } else {
+                            infobox("Veuillez remplir le champs 'Age' par une valeur entière!", "Attention", null);
+                        }
+                        st.setInt(5, id_dep);
+                        st.setInt(6, id_matiere);
+
+                        st.executeUpdate();
+                        infobox("Professeur ajouté avec succès à votre département!", "Done",
+                                null);
+                        txt_age.setText("");
+                        txt_id.setText("");
+                        txt_nom.setText("");
+                        txt_prenom.setText("");
+                        date_picker.setValue(null);
+                        txt_departement.setText("");
+                        txt_matiere.setText("");
+                        showProfesseurs();
+
                     } else {
                         infobox("Cette matière n'est pas enseignée dans votre établissemet. Veuillez rentrer une nouvelle matière !",
                                 "Failed",
                                 null);
                     }
-
-                    java.util.Date date = java.util.Date
-                            .from(date_picker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
-                    Date sqlDate = new Date(date.getTime());
-
-                    String sql = "insert into professeurs(nom,prenom,date_naissance,age,id_dep,id_matiere) values(?,?,?,?,?,?)";
-
-                    st = cnx.prepareStatement(sql);
-
-                    st.setString(1, txt_nom.getText());
-                    st.setString(2, txt_prenom.getText());
-                    st.setDate(3, sqlDate);
-                    String age = txt_age.getText();
-                    if (age.matches("^[0-9]*$")) { // handling int value exception in data base
-                        st.setInt(4, Integer.parseInt(txt_age.getText()));
-                    } else {
-                        infobox("Veuillez remplir le champs 'Age' par une valeur entière!", "Attention", null);
-                    }
-                    st.setInt(5, id_dep);
-                    st.setInt(6, id_matiere);
-
-                    st.executeUpdate();
-                    infobox("Professeur ajouté avec succès à votre département!", "Done",
-                            null);
-                    txt_age.setText("");
-                    txt_id.setText("");
-                    txt_nom.setText("");
-                    txt_prenom.setText("");
-                    date_picker.setValue(null);
-                    txt_departement.setText("");
-                    txt_matiere.setText("");
-                    showProfesseurs();
 
                 } catch (SQLException e) {
                     e.printStackTrace();

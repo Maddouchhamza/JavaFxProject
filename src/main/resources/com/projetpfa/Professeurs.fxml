@@ -18,13 +18,13 @@
    <children>
       <TableView fx:id="table_professeurs" layoutX="61.0" layoutY="306.0" onMouseClicked="#tableProfesseurs" prefHeight="185.0" prefWidth="554.0" style="-fx-background-color: #D4D4D4;">
         <columns>
-          <TableColumn fx:id="cln_id" prefWidth="37.0" text="ID" />
-          <TableColumn fx:id="cln_nom" prefWidth="97.0" text="Nom" />
-            <TableColumn fx:id="cln_prenom" prefWidth="95.0" text="Prénom" />
-            <TableColumn fx:id="cln_age" prefWidth="49.0" text="Age" />
-            <TableColumn fx:id="cln_date" prefWidth="107.0" text="Date de Naissance" />
-            <TableColumn fx:id="cln_matiere" minWidth="0.0" prefWidth="59.0" text="Matière" />
-            <TableColumn fx:id="cln_departement" prefWidth="109.0" text="Département" />
+          <TableColumn fx:id="cln_id" prefWidth="26.0" text="ID" />
+          <TableColumn fx:id="cln_nom" prefWidth="71.0" text="Nom" />
+            <TableColumn fx:id="cln_prenom" prefWidth="76.0" text="Prénom" />
+            <TableColumn fx:id="cln_age" prefWidth="32.0" text="Age" />
+            <TableColumn fx:id="cln_date" prefWidth="109.0" text="Date de Naissance" />
+            <TableColumn fx:id="cln_matiere" minWidth="0.0" prefWidth="102.0" text="Matière" />
+            <TableColumn fx:id="cln_departement" prefWidth="137.0" text="Département" />
         </columns>
       </TableView>
       <JFXTextArea layoutX="60.0" layoutY="177.0" prefHeight="36.0" prefWidth="129.0" AnchorPane.leftAnchor="60.0" />
@@ -72,7 +72,7 @@
             <Font name="Lato Black" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btn_supprimer" layoutX="440.0" layoutY="244.0" onMouseClicked="#Supprimer" prefHeight="37.0" prefWidth="112.0" style="-fx-background-radius: 15; -fx-background-color: #e11414; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Supprimer" textFill="WHITE">
+      <JFXButton fx:id="btn_supprimer" layoutX="499.0" layoutY="244.0" onMouseClicked="#Supprimer" prefHeight="37.0" prefWidth="112.0" style="-fx-background-radius: 15; -fx-background-color: #e11414; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Supprimer" textFill="WHITE">
          <font>
             <Font name="Lato Black" size="15.0" />
          </font>
@@ -83,7 +83,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btn_ajouter" layoutX="120.0" layoutY="244.0" onMouseClicked="#Ajouter" prefHeight="37.0" prefWidth="112.0" style="-fx-background-radius: 15; -fx-background-color: #009d34; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Ajouter" textFill="WHITE">
+      <JFXButton fx:id="btn_ajouter" layoutX="70.0" layoutY="244.0" onMouseClicked="#Ajouter" prefHeight="37.0" prefWidth="112.0" style="-fx-background-radius: 15; -fx-background-color: #009d34; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.3, 0, 0);" text="Ajouter" textFill="WHITE">
          <padding>
             <Insets bottom="6.0" left="15.0" right="15.0" top="6.0" />
          </padding>

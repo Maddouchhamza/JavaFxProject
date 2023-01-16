@@ -210,23 +210,38 @@ public class MatièresController implements Initializable {
 
     @FXML
     void Supprimer() {
-        String sql2 = "delete from matieres where id_matiere =  '" + txt_id.getText() + "'";
+
+        String sql = "select * from professeurs where id_matiere='" + txt_id.getText() + "'";
         try {
-            st = cnx.prepareStatement(sql2);
-            st.executeUpdate();
+            st = cnx.prepareStatement(sql);
+            result = st.executeQuery();
 
-            infobox("Matière supprimée avec succès!", "Done", null);
+            if (result.next()) {
+                infobox("Impossible de supprimer cette matière! Elle est déjà affectée à un professeur! ", "Alert",
+                        null);
+            } else {
+                String sql2 = "delete from matieres where id_matiere =  '" + txt_id.getText() + "'";
+                try {
+                    st = cnx.prepareStatement(sql2);
+                    st.executeUpdate();
 
-            txt_id.setText("");
-            txt_matiere.setText("");
-            txt_module.setText("");
-            txt_coef.setText("");
-            txt_volume.setText("");
+                    infobox("Matière supprimée avec succès!", "Done", null);
 
-            showMatieres();
+                    txt_id.setText("");
+                    txt_matiere.setText("");
+                    txt_module.setText("");
+                    txt_coef.setText("");
+                    txt_volume.setText("");
 
-        } catch (SQLException e1) {
-            e1.printStackTrace();
+                    showMatieres();
+
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 

@@ -234,7 +234,7 @@ public class EtudiantsController implements Initializable {
             st.setInt(1, etudiants.getId());
             result = st.executeQuery();
             if (result.next()) {
-                txt_ville.setText(result.getString("nom_matiere"));
+                txt_ville.setText(result.getString("ville"));
                 txt_id.setText(Integer.toString(result.getInt("id_etudiant")));
                 txt_nom.setText(result.getString("nom_etudiant"));
                 txt_prenom.setText(result.getString("prenom_etudiant"));
