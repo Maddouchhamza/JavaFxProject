@@ -110,7 +110,14 @@ public class EtudiantsController implements Initializable {
                     st.setString(1, txt_nom.getText());
                     st.setString(2, txt_prenom.getText());
                     st.setString(3, txt_ville.getText());
-                    st.setInt(4, Integer.parseInt(txt_age.getText()));
+
+                    String age = txt_age.getText();
+                    if (age.matches("^[0-9]*$")) { // handling int value exception in data base
+                        st.setInt(4, Integer.parseInt(txt_age.getText()));
+                    } else {
+                        infobox("Veuillez remplir le champs 'Age' par une valeur entière!", "Attention", null);
+                    }
+
                     st.setInt(5, id_dep);
 
                     st.executeUpdate();
@@ -145,7 +152,14 @@ public class EtudiantsController implements Initializable {
             st3 = cnx.prepareStatement(sql3);
             st3.setString(1, txt_nom.getText());
             st3.setString(2, txt_prenom.getText());
-            st3.setInt(3, Integer.parseInt(txt_age.getText()));
+
+            String age = txt_age.getText();
+            if (age.matches("^[0-9]*$")) { // handling int value exception in data base
+                st3.setInt(3, Integer.parseInt(txt_age.getText()));
+            } else {
+                infobox("Veuillez remplir le champs 'Age' par une valeur entière!", "Attention", null);
+            }
+
             st3.setString(4, txt_ville.getText());
             st3.executeUpdate();
             infobox("Informations modifié avec succès!", "Done",
